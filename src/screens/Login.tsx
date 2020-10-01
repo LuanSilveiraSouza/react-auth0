@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Image } from 'antd';
+import { Button, Image, Row, Col, Divider } from 'antd';
+import { LoginOutlined } from '@ant-design/icons';
 
 import { useAuth0 } from '@auth0/auth0-react';
 
@@ -9,23 +10,32 @@ const Login: React.FC = () => {
 	const { loginWithRedirect } = useAuth0();
 
 	return (
-		<>
-			<Image src={loginImg} className='content-img' />
+		<Row justify='center' align='middle'>
+			<Col lg={12}>
+				<Image src={loginImg} />
+			</Col>
 
-			<div className="content-text">
-				<h1 className='form-title'>Fazer Login</h1>
+			<Col lg={8}>
+				<h1 className='login-title'>SecretGIF</h1>
 
-				<Button
-					type='primary'
-					size='large'
-					onClick={() => {
-						loginWithRedirect();
-					}}
-				>
-					Login
-				</Button>
-			</div>
-		</>
+				<h2>Faça login e descubra o segredo...</h2>
+
+				<Divider />
+
+				<Row justify='center'>
+					<Button
+						type='primary'
+						size='large'
+						icon={<LoginOutlined />}
+						onClick={() => {
+							loginWithRedirect();
+						}}
+					>
+						Login
+					</Button>
+				</Row>
+			</Col>
+		</Row>
 	);
 };
 

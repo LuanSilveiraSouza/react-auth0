@@ -16,9 +16,6 @@ const { Header, Footer, Content } = Layout;
 const App: FC = () => {
 	const { isAuthenticated, user} = useAuth0();
 
-	console.log(isAuthenticated);
-	console.log(user);
-
 	return (
 		<Layout className='page-wraper'>
 			<Header className='header'>
@@ -33,7 +30,7 @@ const App: FC = () => {
 							<Login />
 						</Route>
 						<Route path='/gif'>
-							{isAuthenticated && <PostLogin />}
+							{isAuthenticated && <PostLogin user={user.name}/>}
 						</Route>
 					</Switch>
 				</Router>

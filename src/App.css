@@ -24,21 +24,7 @@
 }
 
 .content {
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
 	margin: 5%;
-}
-
-.content-img {
-	flex: 3;
-}
-
-.content-text {
-	flex: 2;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
 }
 
 .form-title {
